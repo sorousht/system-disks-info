@@ -15,10 +15,16 @@ fn main() {
     system.refresh_all();
 
     for disk in system.get_disks() {
-        print!("{}({})",
+        let total: u64 = disk.get_total_space();
+        let available: u64 = disk.get_available_space();
+        let available_percentage: u64 = (available * 100) / total;
+        println!("{}({}) - {}% ({})",
             disk.get_name(),
-            get_in_readable_unit(disk.get_total_space()));
+            get_in_readable_unit(total),
+            available_percentage,
+            get_in_readable_unit(available));
     }
+
 }
 
 fn get_in_readable_unit(value: u64) -> String {
