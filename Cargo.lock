@@ -1,4 +1,23 @@
 [[package]]
 name = "disk-usage"
 version = "0.1.0"
+dependencies = [
+ "sysinfo 0.2.10 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
+[[package]]
+name = "libc"
+version = "0.2.42"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "sysinfo"
+version = "0.2.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "libc 0.2.42 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[metadata]
+"checksum libc 0.2.42 (registry+https://github.com/rust-lang/crates.io-index)" = "b685088df2b950fccadf07a7187c8ef846a959c142338a48f9dc0b94517eb5f1"
+"checksum sysinfo 0.2.10 (registry+https://github.com/rust-lang/crates.io-index)" = "2d89bda38f2dd38b515181730f3dd8c6b23bcc286f96604cbcb048f4e394dd55"
